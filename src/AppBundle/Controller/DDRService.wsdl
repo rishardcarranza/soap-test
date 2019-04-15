@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="DDRService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types>
+<xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="/Service0.xsd" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="/Service2.xsd" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="/Service1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="/Service.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="IDDRService_Login_InputMessage">
+<wsdl:part name="parameters" element="tns:Login"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_Login_OutputMessage">
+<wsdl:part name="parameters" element="tns:LoginResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_Login_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="detail" element="q1:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetBranchList_InputMessage">
+<wsdl:part name="parameters" element="tns:GetBranchList"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetBranchList_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetBranchListResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetBranchList_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System" name="detail" element="q2:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetBranchInfo_InputMessage">
+<wsdl:part name="parameters" element="tns:GetBranchInfo"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetBranchInfo_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetBranchInfoResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetBranchInfo_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System" name="detail" element="q3:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetchangedStockListbyLastAccess_InputMessage">
+<wsdl:part name="parameters" element="tns:GetchangedStockListbyLastAccess"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetchangedStockListbyLastAccess_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetchangedStockListbyLastAccessResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetchangedStockListbyLastAccess_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System" name="detail" element="q4:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockInfo_InputMessage">
+<wsdl:part name="parameters" element="tns:GetStockInfo"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockInfo_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetStockInfoResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockInfo_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/System" name="detail" element="q5:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockCurrentBid_InputMessage">
+<wsdl:part name="parameters" element="tns:GetStockCurrentBid"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockCurrentBid_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetStockCurrentBidResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockCurrentBid_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/System" name="detail" element="q6:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetAuctionDateListByBranch_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAuctionDateListByBranch"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetAuctionDateListByBranch_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAuctionDateListByBranchResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetAuctionDateListByBranch_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/System" name="detail" element="q7:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockListByAuctionDateByBranch_InputMessage">
+<wsdl:part name="parameters" element="tns:GetStockListByAuctionDateByBranch"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockListByAuctionDateByBranch_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetStockListByAuctionDateByBranchResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStockListByAuctionDateByBranch_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/System" name="detail" element="q8:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetChangedStockListByAuctionDateByBranch_InputMessage">
+<wsdl:part name="parameters" element="tns:GetChangedStockListByAuctionDateByBranch"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetChangedStockListByAuctionDateByBranch_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetChangedStockListByAuctionDateByBranchResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetChangedStockListByAuctionDateByBranch_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/System" name="detail" element="q9:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStocksRecentBids_InputMessage">
+<wsdl:part name="parameters" element="tns:GetStocksRecentBids"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStocksRecentBids_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetStocksRecentBidsResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetStocksRecentBids_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/System" name="detail" element="q10:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetIBuyFastStocks_InputMessage">
+<wsdl:part name="parameters" element="tns:GetIBuyFastStocks"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetIBuyFastStocks_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetIBuyFastStocksResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetIBuyFastStocks_InvalidOperationExceptionFault_FaultMessage">
+      <wsdl:part name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/System" element="q11:InvalidOperationException" />
+</wsdl:message>
+<wsdl:message name="IDDRService_GetUtcAuctionDateByBranch_InputMessage">
+<wsdl:part name="parameters" element="tns:GetUtcAuctionDateByBranch"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetUtcAuctionDateByBranch_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetUtcAuctionDateByBranchResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetUtcAuctionDateByBranch_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/System" name="detail" element="q12:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetCurrentStockStatus_InputMessage">
+<wsdl:part name="parameters" element="tns:GetCurrentStockStatus"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetCurrentStockStatus_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetCurrentStockStatusResponse"/>
+</wsdl:message>
+<wsdl:message name="IDDRService_GetCurrentStockStatus_InvalidOperationExceptionFault_FaultMessage">
+<wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/System" name="detail" element="q13:InvalidOperationException"/>
+</wsdl:message>
+<wsdl:portType name="IDDRService">
+<wsdl:operation name="Login">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/Login" message="tns:IDDRService_Login_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/LoginResponse" message="tns:IDDRService_Login_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/LoginInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_Login_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetBranchList">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetBranchList" message="tns:IDDRService_GetBranchList_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetBranchListResponse" message="tns:IDDRService_GetBranchList_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetBranchListInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetBranchList_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetBranchInfo">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetBranchInfo" message="tns:IDDRService_GetBranchInfo_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetBranchInfoResponse" message="tns:IDDRService_GetBranchInfo_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetBranchInfoInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetBranchInfo_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetchangedStockListbyLastAccess">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetchangedStockListbyLastAccess" message="tns:IDDRService_GetchangedStockListbyLastAccess_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetchangedStockListbyLastAccessResponse" message="tns:IDDRService_GetchangedStockListbyLastAccess_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetchangedStockListbyLastAccessInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetchangedStockListbyLastAccess_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetStockInfo">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetStockInfo" message="tns:IDDRService_GetStockInfo_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetStockInfoResponse" message="tns:IDDRService_GetStockInfo_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetStockInfoInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetStockInfo_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetStockCurrentBid">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetStockCurrentBid" message="tns:IDDRService_GetStockCurrentBid_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetStockCurrentBidResponse" message="tns:IDDRService_GetStockCurrentBid_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetStockCurrentBidInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetStockCurrentBid_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetAuctionDateListByBranch">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetAuctionDateListByBranch" message="tns:IDDRService_GetAuctionDateListByBranch_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetAuctionDateListByBranchResponse" message="tns:IDDRService_GetAuctionDateListByBranch_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetAuctionDateListByBranchInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetAuctionDateListByBranch_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetStockListByAuctionDateByBranch">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetStockListByAuctionDateByBranch" message="tns:IDDRService_GetStockListByAuctionDateByBranch_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetStockListByAuctionDateByBranchResponse" message="tns:IDDRService_GetStockListByAuctionDateByBranch_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetStockListByAuctionDateByBranchInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetStockListByAuctionDateByBranch_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetChangedStockListByAuctionDateByBranch">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetChangedStockListByAuctionDateByBranch" message="tns:IDDRService_GetChangedStockListByAuctionDateByBranch_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetChangedStockListByAuctionDateByBranchResponse" message="tns:IDDRService_GetChangedStockListByAuctionDateByBranch_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetChangedStockListByAuctionDateByBranchInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetChangedStockListByAuctionDateByBranch_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetStocksRecentBids">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetStocksRecentBids" message="tns:IDDRService_GetStocksRecentBids_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetStocksRecentBidsResponse" message="tns:IDDRService_GetStocksRecentBids_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetStocksRecentBidsInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetStocksRecentBids_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetIBuyFastStocks">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetIBuyFastStocks" message="tns:IDDRService_GetIBuyFastStocks_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetIBuyFastStocksResponse" message="tns:IDDRService_GetIBuyFastStocks_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetIBuyFastStocksInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetIBuyFastStocks_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetUtcAuctionDateByBranch">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetUtcAuctionDateByBranch" message="tns:IDDRService_GetUtcAuctionDateByBranch_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetUtcAuctionDateByBranchResponse" message="tns:IDDRService_GetUtcAuctionDateByBranch_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetUtcAuctionDateByBranchInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetUtcAuctionDateByBranch_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStockStatus">
+<wsdl:input wsaw:Action="http://tempuri.org/IDDRService/GetCurrentStockStatus" message="tns:IDDRService_GetCurrentStockStatus_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IDDRService/GetCurrentStockStatusResponse" message="tns:IDDRService_GetCurrentStockStatus_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/IDDRService/GetCurrentStockStatusInvalidOperationExceptionFault" name="InvalidOperationExceptionFault" message="tns:IDDRService_GetCurrentStockStatus_InvalidOperationExceptionFault_FaultMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_IDDRService" type="tns:IDDRService">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Login">
+<soap:operation soapAction="http://tempuri.org/IDDRService/Login" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetBranchList">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetBranchList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetBranchInfo">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetBranchInfo" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetchangedStockListbyLastAccess">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetchangedStockListbyLastAccess" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetStockInfo">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetStockInfo" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetStockCurrentBid">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetStockCurrentBid" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetAuctionDateListByBranch">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetAuctionDateListByBranch" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetStockListByAuctionDateByBranch">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetStockListByAuctionDateByBranch" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetChangedStockListByAuctionDateByBranch">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetChangedStockListByAuctionDateByBranch" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetStocksRecentBids">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetStocksRecentBids" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault use="literal" name="InvalidOperationExceptionFault" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetIBuyFastStocks">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetIBuyFastStocks" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault name="InvalidOperationExceptionFault" use="literal" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetUtcAuctionDateByBranch">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetUtcAuctionDateByBranch" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault name="InvalidOperationExceptionFault" use="literal" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStockStatus">
+<soap:operation soapAction="http://tempuri.org/IDDRService/GetCurrentStockStatus" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="InvalidOperationExceptionFault">
+<soap:fault name="InvalidOperationExceptionFault" use="literal" namespace=""/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="DDRService">
+<wsdl:port name="BasicHttpBinding_IDDRService" binding="tns:BasicHttpBinding_IDDRService">
+<soap:address location="https://auctiondata.iaai.com/Service.svc" />
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
